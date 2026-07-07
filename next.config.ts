@@ -62,6 +62,16 @@ const SECURITY_HEADERS = [
 
 const nextConfig: NextConfig = {
   /**
+   * Standalone output for Docker / EasyPanel deploys.
+   *
+   * `next build` emits a self-contained `.next/standalone` folder with
+   * a minimal `server.js` and only the traced `node_modules` a
+   * production run needs — no `npm install` in the runtime image. The
+   * Dockerfile copies that folder plus `public/` and `.next/static/`.
+   */
+  output: "standalone",
+
+  /**
    * Cache-Control policy.
    *
    * Why this exists:

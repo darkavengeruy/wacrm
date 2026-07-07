@@ -1,0 +1,27 @@
+# Dependencies & build output — rebuilt inside the image
+node_modules
+.next
+out
+
+# Env files — inject secrets through EasyPanel, never bake them in
+.env
+.env.*
+!.env.local.example
+
+# VCS & tooling
+.git
+.github
+.qodo
+.vscode
+.idea
+
+# Docs & meta — not needed at build time
+docs
+*.md
+!README.md
+
+# Local / test noise
+coverage
+*.log
+.DS_Store
+Thumbs.db
